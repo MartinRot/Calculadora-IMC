@@ -1,0 +1,71 @@
+#data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#ingresados {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+#cartas {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.numerosCartas {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.contenedor1 {
+    justify-content: center;
+    margin-bottom: 2rem;
+    padding: 1em;
+}
+
+.tablaPersonas {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+:not(caption)>*>* {
+    border-bottom-width: 0 !important;
+}
+
+.table {
+    border-bottom-width: none !important;
+    /* border-bottom-width: 1px; */
+}
+
+.box {
+    background-color: whitesmoke;
+}
+
+.saludo1 {
+    color: green;
+    background-color: lightgrey;
+}
+
+.hide {
+    display: none;
+}
+
+i {
+    padding: 0.5rem;
+    color: rgba(25, 74, 160, 0.5) !important;
+    cursor: pointer;
+    transition: all 0.2s;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-wrap: wrap;
+}
