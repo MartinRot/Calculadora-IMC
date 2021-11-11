@@ -26,7 +26,8 @@
 .contenedor1 {
     justify-content: center;
     margin-bottom: 2rem;
-    padding: 1em;
+    padding: 1em;    
+    padding-top: 2px;
 }
 
 .tablaPersonas {
@@ -48,11 +49,6 @@
     background-color: whitesmoke;
 }
 
-.saludo1 {
-    color: green;
-    background-color: lightgrey;
-}
-
 .hide {
     display: none;
 }
@@ -68,4 +64,43 @@ i {
     justify-content: space-around;
     align-content: space-around;
     flex-wrap: wrap;
+}
+
+.button {
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 0.3rem;
+    background-color: transparent;
+    border: none;
+}
+
+.divBtn{    
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media screen and (min-width: 768px) {
+    .container1 {
+        width: 60%;
+        margin: auto;
+    }
+    .button {
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    .button:hover {
+        background-color: #b9b9b9;
+        color: #fff;
+        cursor: pointer;
+        background-color: #63636b;
+    }
+}
+
+#info{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+img{
+    margin-left: 1rem;
 }

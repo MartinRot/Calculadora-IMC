@@ -46,7 +46,7 @@ const lista = document.getElementById("lista");
 
 //Muestra por pantalla todas las ideas almacenadas en localstorage
 
-const mostrar = () => { 
+const mostrar = () => {
 
     lista.innerHTML = "";
     let personas = traerPersonas();
@@ -361,8 +361,17 @@ function camposIncompletos() {
     alertify.error('Campos incorrectos')
 }
 
+document.getElementById("info").addEventListener("click", mostrarAlerta);
+
+function mostrarAlerta(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    alertify.alert('ACERCA DEL PROYECTO', 'Desarrollo de plataforma para calcular Indice de masa corporal.<br><br> Tecnologias: <br><li>HTML</li><li>CSS</li><li>Bootstrap</li><li>Javascript</li>', function(){ alertify.success('Muchas gracias por tu visita!'); });
+}
+
 //Formulario
-(function() {
+(function () {
     'use strict'
 
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -370,8 +379,8 @@ function camposIncompletos() {
 
     // Loop over them and prevent submission
     Array.prototype.slice.call(forms)
-        .forEach(function(form) {
-            form.addEventListener('submit', function(event) {
+        .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
                 if (!form.checkValidity()) {
                     event.preventDefault()
                     event.stopPropagation()
@@ -381,6 +390,69 @@ function camposIncompletos() {
             }, false)
         })
 })()
+
+
+
+/***********************************
+ *           DARKMODE              *
+ ***********************************/
+
+const darkMode = () => {
+
+    document.getElementsByClassName("box")[0].style = "background-color: #14213d";
+    document.getElementsByTagName("body")[0].style = "background-color: #63636b";
+    document.getElementsByTagName("footer")[0].style = "color: white";
+
+
+    for (let i = 0; i < document.getElementsByTagName("th").length; i++) {
+        document.getElementsByTagName("th")[i].style = "color: white";
+    }    
+    document.getElementsByTagName("button")[0].style = "color:white"
+    document.getElementsByTagName("button")[1].style = "color:white"
+
+    document.getElementById("form").style = "color:white";    
+
+    document.getElementById("tabla").classList.remove("table-striped");
+    document.getElementById("lista").style =  "color: white";
+
+    document.getElementById("theme").textContent = "Modo light";
+
+    localStorage.setItem("theme", "dark")
+}
+
+const lightMode = () => {
+
+    document.getElementsByClassName("box")[0].style = "background-color: whitesmoke";
+    document.getElementsByTagName("body")[0].style = "background-color: white";
+    document.getElementsByTagName("footer")[0].style = "color: #6c757d";
+    
+    
+    for (let i = 0; i < document.getElementsByTagName("th").length; i++) {
+        document.getElementsByTagName("th")[i].style = "color: black";
+    }    
+    document.getElementsByTagName("button")[0].style = "color:black"
+    document.getElementsByTagName("button")[1].style = "color:black"
+    
+    document.getElementById("form").style = "color:black";    
+    document.getElementById("tabla").classList.add("table-striped");
+    document.getElementById("lista").style =  "color: black";
+
+    document.getElementById("theme").textContent = "Modo dark";
+    
+    localStorage.setItem("theme", "light")
+
+}
+
+ document.getElementById("theme").addEventListener("click", () => {
+
+    if (localStorage.getItem("theme") === "dark") {        
+        lightMode();
+    } else {
+        darkMode();
+    }
+
+}) 
+
 
 //Iniciar el script
 mostrar();
