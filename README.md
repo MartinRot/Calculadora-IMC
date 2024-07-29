@@ -9,4 +9,4 @@ Tecnologias 🛠️:
 - Javascript
 
 
-👉🏼 [Link del proyecto](https://martinrot.github.io/Javascript-CoderHouse//) 👈🏼 
+👉🏼 [Link del proyecto](https://martinrot.github.io/Calculadora-IMC/) 👈🏼 
